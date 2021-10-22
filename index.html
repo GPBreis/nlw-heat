@@ -26,53 +26,57 @@
           />
         </div>
 
-        <h1>Gustavo Breis</h1>
-        <a href="https://instagram.com/gpbreis">
-          <img src="images/github.svg" alt="Ícone github" target="_blank" />
+        <h1 id="userName">Gustavo Pereira Breis</h1>
+        <a href="https://github.com/gpbreis" target="_blank">
+          <img src="images/github.svg" alt="Ícone github" />
           gpbreis
         </a>
 
         <p>An instructor focused on helping people start programming for web</p>
 
-        <ul>
-          <li>
-            <a href="https://youtube.com/gpbreis">
-              <img
-                src="images/youtube.svg"
-                alt="Ícone youtube"
-                target="_blank"
-              />
+        <ul id="socialLinks">
+          <li class="youtube">
+            <a href="https://youtube.com/gpbreis" target="_blank">
+              <img src="images/youtube.svg" alt="Ícone youtube" />
             </a>
           </li>
-          <li>
-            <a href="https://facebook.com/gpbreis">
-              <img
-                src="images/facebook.svg"
-                alt="Ícone facebook"
-                target="_blank"
-              />
+          <li class="facebook">
+            <a href="https://facebook.com/gpbreis" target="_blank">
+              <img src="images/facebook.svg" alt="Ícone facebook" />
             </a>
           </li>
-          <li>
-            <a href="https://instagram.com/gpbreis">
-              <img
-                src="images/instagram.svg"
-                alt="Ícone instagram"
-                target="_blank"
-              />
+          <li class="instagram">
+            <a href="https://instagram.com/gpbreis" target="_blank">
+              <img src="images/instagram.svg" alt="Ícone instagram" />
             </a>
           </li>
-          <li>
-            <a href="https://twitter.com/gpbreis">
-              <img
-                src="images/twitter.svg"
-                alt="Ícone twitter"
-                target="_blank"
-              />
+          <li class="twitter">
+            <a href="https://twitter.com/gpbreis" target="_blank">
+              <img src="images/twitter.svg" alt="Ícone twitter" />
             </a>
           </li>
         </ul>
       </div>
     </main>
+
+    <script>
+      const linksSocialMedia = {
+        github: 'gpbreis',
+        youtube: 'channel/UC4vQX2m6BS7Ll_RIiJ9pHGA',
+        facebook: 'gpbreis',
+        instagram: 'gpbreis',
+        twitter: 'gpbreis'
+      }
+
+      function changeSocialMediaLinks() {
+        for (let li of socialLinks.children) {
+          const social = li.getAttribute('class')
+
+          li.children[0].href = `https://${social}.com/${linksSocialMedia[social]}`
+        }
+      }
+
+      changeSocialMediaLinks()
+    </script>
   </body>
 </html>
